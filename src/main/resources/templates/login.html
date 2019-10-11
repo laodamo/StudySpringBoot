@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://getbootstrap.com/docs/4.3/examples/sign-in/ -->
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Signin Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<link href="asserts/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="asserts/css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <form class="form-signin" th:action="@{/user/login}" method="post">
+  <img class="mb-4" src="asserts/img/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
+        <p style="color:#ff0500" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+  <label for="inputEmail" class="sr-only" th:text="#{login.email}">Email address</label>
+  <input type="email" id="inputEmail" name="username" class="form-control" placeholder="Email address" th:placeholder="#{login.email}" required="" autofocus="">
+  <label for="inputPassword" class="sr-only" th:text="#{login.pas}">Password</label>
+  <input type="password" id="inputPassword" name="password" class="form-control" th:placeholder="#{login.pas}" placeholder="Password" required="">
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> [[#{login.rember}]]
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}">Sign in</button>
+  <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+        <a class="btn btn-sm" th:href="@{/index.html(l='zh_CN')}">中文</a>
+        <a class="btn btn-sm" th:href="@{/index.html(l='en_US')}">English</a>
+</form>
+
+
+</body></html>
